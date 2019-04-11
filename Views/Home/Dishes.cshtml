@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dishes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    <a style="float: right;" href="dishes/new">Add a Dish</a>
+    
+    <div class="container center-align">
+        <p><a href="/">Chefs</a> | Dishes</p>
+        <p>Yum, take a look at our tasty dishes!</p>
+        <hr style="border: 1px solid black;">
+        <table>
+            <thead>
+                <th>Name</th>
+                <th>Chef</th>
+                <th>Tastiness</th>
+                <th>Calories</th>
+            </thead>
+            <tbody>
+            @model List<Dish>
+            @{
+                foreach(var dish in @Model) 
+                {
+                    <tr>
+                        <td>@dish.Name</td>
+                        <td>@dish.Creator.Lname @dish.Creator.Fname</td>
+                        <td>@dish.Tastiness</td>
+                        <td>@dish.Calories</td>
+                    </tr>
+                }
+            }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>New Chef</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        label {
+            display: block !important;
+        }
+        .errorMsg {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Add a Chef!</h2>
+        <a href="/">Home</a>
+        @model Chef
+        <form class="left-align" asp-action="NewChef" asp-controller="Home" method="post">
+
+            <br>
+            <span class="errorMsg" asp-validation-for="Fname"></span>
+            <br>
+            <label asp-for="Fname"></label>
+            <input asp-for="Fname">
+            <br>
+
+            <br>
+            <span class="errorMsg" asp-validation-for="Lname"></span>
+            <br>
+            <label asp-for="Lname"></label>
+            <input asp-for="Lname">
+            <br>
+
+            <br>
+            <span class="errorMsg" asp-validation-for="Birthday"></span>
+            <br>
+            <label asp-for="Birthday"></label>
+            <input type="date" asp-for="Birthday">
+            <br>
+
+            <br>
+            <input class="btn blue" type="submit" value="Add Chef">
+        </form>
+    </div>
+</body>
+</html>
