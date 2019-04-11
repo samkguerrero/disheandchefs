@@ -26,8 +26,8 @@
                     foreach(var chef in @Model) 
                     {
                         <tr>
-                            <td>@chef.Fname</td>
-                            <td>@chef.Lname</td>
+                            <td>@chef.Fname @chef.Lname</td>
+                            <td>@(DateTime.Today.Year-@chef.Birthday.Year)</td>
                             <td>@chef.DishesMade.Count</td>
                         </tr>
                     }
